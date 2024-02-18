@@ -1,0 +1,32 @@
+[package]
+name = "game_animation_programming"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+strip = true
+# lto = true
+
+[profile.dev]
+opt-level = 1
+debug = false
+
+[profile.dev.package."*"]
+opt-level = 3
+debug = false
+
+[dependencies]
+glam = { version = "0" } # features = ["scalar-math"] for more readable docs
+image = { version = "0.24", default-features = false, features = ["png"] }
+glium = { version = "0.33", default-features = false }
+
+[dependencies.glium_sdl2]
+git = "https://github.com/Des-Nerger/glium-sdl2"
+rev = "ac8a783ea6456bcfc82467c2b9b549c8a8f2275d"
+
+[dependencies.sdl2]
+version = "0.36"
+
+# [target.'cfg(windows)'.dependencies.sdl2]
+# version = "0.36"
+# features = ["bundled"]
